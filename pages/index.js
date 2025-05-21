@@ -15,6 +15,10 @@ export default function Home() {
           View Templates on Notion
         </a>
       </header>
+      <div className="bg-red-500 text-white p-4 text-center">
+  🔥 Tailwind is working if this box is red!
+      </div>
+      
 
       <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <WidgetCard
