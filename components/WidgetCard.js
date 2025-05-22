@@ -23,8 +23,10 @@ export default function WidgetCard({ title, href, iframeSrc, description, price,
       <div className="p-4">
         {/* Title and Link */}
         <div className="mb-3">
-          <Link href={href} className="text-xl font-bold text-white hover:text-orange-400 transition-colors">
-            {title}
+          <Link href={href}>
+            <a className="text-xl font-bold text-white hover:text-orange-400 transition-colors">
+              {title}
+            </a>
           </Link>
           <div className="text-xs text-gray-500 mt-1">
             marisdigitaldesk.notion.site
@@ -50,13 +52,21 @@ export default function WidgetCard({ title, href, iframeSrc, description, price,
 
         {/* Date */}
         <div className="text-xs text-gray-500 mb-4">
-          Updated recently
+          {new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit'
+          })}
         </div>
 
         {/* Action Buttons */}
         <div className="flex gap-2">
-          <Link href={href} className="flex-1 text-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded transition-colors">
-            Try Demo
+          <Link href={href}>
+            <a className="flex-1 text-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded transition-colors">
+              Try Demo
+            </a>
           </Link>
           <button className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium rounded transition-colors">
             Buy Widget
@@ -65,3 +75,4 @@ export default function WidgetCard({ title, href, iframeSrc, description, price,
       </div>
     </div>
   );
+}
