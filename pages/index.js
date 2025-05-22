@@ -8,7 +8,7 @@ export default function Home() {
             <div className="w-6 h-6 bg-orange-400 text-black text-xs font-bold flex items-center justify-center rounded">
               M
             </div>
-            <h1 className="text-lg font-medium">Mari&apos;s Digital Desk</h1>
+            <h1 className="text-lg font-medium">Maris Digital Desk</h1>
           </div>
           <div className="flex space-x-6 text-sm">
             <a href="#" className="text-gray-300 hover:text-white">Get updates</a>
@@ -30,7 +30,7 @@ export default function Home() {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center relative">
               <h1 className="text-6xl font-bold text-green-700 mb-2">
-                Mari&apos;s
+                Maris
               </h1>
               <h2 className="text-3xl font-semibold text-gray-700 tracking-wider">
                 DIGITAL DESK
@@ -51,7 +51,7 @@ export default function Home() {
       <div className="bg-gray-900 text-white pt-16 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-4">Mari&apos;s Digital Desk</h1>
+            <h1 className="text-4xl font-bold mb-4">Maris Digital Desk</h1>
             <p className="text-xl text-gray-300 mb-2">Templates to organize your digital flow.</p>
             <p className="text-gray-400 max-w-4xl">
               Your go-to hub for thoughtfully crafted Notion templates, designed to bring calm, structure, and creativity to your digital workspace.
@@ -74,7 +74,7 @@ export default function Home() {
                     className="w-full h-full"
                     allow="fullscreen"
                     loading="lazy"
-                  />
+                  ></iframe>
                   <div className="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded text-sm font-medium">
                     $9.99
                   </div>
@@ -118,7 +118,7 @@ export default function Home() {
                     className="w-full h-full"
                     allow="fullscreen"
                     loading="lazy"
-                  />
+                  ></iframe>
                   <div className="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded text-sm font-medium">
                     $12.99
                   </div>
@@ -173,10 +173,10 @@ export default function Home() {
           <section className="mb-12">
             <div className="flex items-center mb-4">
               <span className="text-2xl mr-3">🔖</span>
-              <h2 className="text-2xl font-bold">About Mari&apos;s Digital Desk</h2>
+              <h2 className="text-2xl font-bold">About Maris Digital Desk</h2>
             </div>
             <div className="space-y-4 text-gray-300">
-              <p className="text-lg">Hi, I&apos;m Mari!</p>
+              <p className="text-lg">Hi, I am Mari!</p>
               <p>
                 I create modern, minimal templates to help people build calm into their digital lives. 
                 This desk is where I keep the tools I wish I had when I started.
@@ -190,16 +190,16 @@ export default function Home() {
       <footer className="bg-gray-900 text-gray-500 border-t border-gray-800 py-8">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="mb-4">
-            <p className="italic">Created by Mari&apos;s Digital Desk</p>
+            <p className="italic">Created by Maris Digital Desk</p>
             <p className="text-sm">Templates to organize your digital flow.</p>
           </div>
-          <div className="flex space-x-6 text-sm text-gray-600">
+          <div className="flex justify-center space-x-6 text-sm text-gray-600">
             <a href="#" className="hover:text-blue-600">Support</a>
             <a href="#" className="hover:text-blue-600">Privacy</a>
             <a href="#" className="hover:text-blue-600">Terms</a>
           </div>
-          <div className="mt-6 pt-6 border-t border-gray-50 text-center text-sm text-gray-500">
-            <p>&copy; {new Date().getFullYear()} Mari&apos;s Digital Desk. All rights reserved.</p>
+          <div className="mt-6 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
+            <p>© 2024 Maris Digital Desk. All rights reserved.</p>
           </div>
         </div>
       </footer>
