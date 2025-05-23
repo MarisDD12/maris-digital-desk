@@ -24,8 +24,8 @@ export default function Layout({ children }) {
             <Image
               src="/assets/avatar.png"
               alt="Mari Avatar"
-              width={80}
-              height={80}
+              width={90}
+              height={90}
               className="object-cover"
             />
           </div>
