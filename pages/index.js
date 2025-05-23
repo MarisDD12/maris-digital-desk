@@ -5,7 +5,7 @@ import Card from '../components/Cards';
 export default function Home() {
   return (
     <Layout>
-      <div className="mb-12">
+      <div className="mb-12 text-center md:text-left">
         <p className="text-lg text-gray-300">
           Templates to organize your digital flow.
         </p>
@@ -13,7 +13,7 @@ export default function Home() {
 
       {/* Featured Templates */}
       <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-6">✨ Featured Templates</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center md:text-left">✨ Featured Templates</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <Card
             title="Simple Weekly Planner"
@@ -34,7 +34,7 @@ export default function Home() {
 
       {/* Featured Widgets */}
       <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-6">✨ Featured Widgets</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center md:text-left">✨ Featured Widgets</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <Card
             title="Weather Widget"
@@ -107,4 +107,5 @@ export default function Home() {
     </Layout>
   );
 }
+
 
