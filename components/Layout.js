@@ -1,14 +1,15 @@
 // components/Layout.js
 import React from 'react';
 import Image from 'next/image';
+import Footer from './Footer';
 
 export default function Layout({ children }) {
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-gray-900 text-white min-h-screen flex flex-col">
       {/* Hero Banner */}
       <div className="relative w-full h-[20rem] md:h-[24rem]">
         <Image
-          src="/assets/banner.png"
+          src="/assets/hero-banner.png"
           alt="Hero banner"
           layout="fill"
           objectFit="cover"
@@ -37,7 +38,9 @@ export default function Layout({ children }) {
         </div>
 
         <main>{children}</main>
+        <Footer />
       </div>
     </div>
   );
 }
+
