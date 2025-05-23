@@ -38,7 +38,7 @@ export default function Layout({ children }) {
   <main className="pb-16 pt-10 px-4 sm:px-8">{children}</main>
 </div>
 
-      </div>
+      
 
       <Footer />
     </div>
