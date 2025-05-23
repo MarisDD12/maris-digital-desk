@@ -18,7 +18,7 @@ export default function Layout({ children }) {
       </div>
 
       {/* Avatar and Heading */}
-      <div className="max-w-5xl mx-auto px-6 -mt-20 md:-mt-24 relative z-10">
+      <div className="max-w-5xl mx-auto w-full px-6 -mt-20 md:-mt-24 relative z-10 flex-grow">
         <div className="flex items-center gap-4 mb-8">
           <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white flex items-center justify-center bg-white">
             <Image
@@ -37,10 +37,10 @@ export default function Layout({ children }) {
           </div>
         </div>
 
-        <main>{children}</main>
-        <Footer />
+        <main className="pb-16">{children}</main>
       </div>
+
+      <Footer />
     </div>
   );
 }
-
