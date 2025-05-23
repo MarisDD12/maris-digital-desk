@@ -9,7 +9,7 @@ export default function Layout({ children }) {
       {/* Hero Banner */}
       <div className="relative w-full h-[20rem] md:h-[24rem]">
         <Image
-          src="/assets/hero-banner.png"
+          src="/assets/banner.png"
           alt="Hero banner"
           layout="fill"
           objectFit="cover"
