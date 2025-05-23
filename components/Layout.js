@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       {/* Hero Banner */}
-      <div className="relative w-full h-[32rem]">
+      <div className="relative w-full h-[20rem] md:h-[24rem]">
         <Image
           src="/assets/banner.png"
           alt="Hero banner"
@@ -17,15 +17,15 @@ export default function Layout({ children }) {
       </div>
 
       {/* Avatar and Heading */}
-      <div className="max-w-5xl mx-auto px-6 -mt-24 sm:-mt-28 md:-mt-32 relative z-10">
+      <div className="max-w-5xl mx-auto px-6 -mt-20 md:-mt-24 relative z-10">
         <div className="flex items-center gap-4 mb-8">
-          <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white">
+          <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white flex items-center justify-center bg-white">
             <Image
               src="/assets/avatar.png"
               alt="Mari Avatar"
               width={80}
               height={80}
-              objectFit="cover"
+              className="object-cover"
             />
           </div>
           <div>
