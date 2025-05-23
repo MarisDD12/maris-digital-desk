@@ -8,7 +8,7 @@ export default function Layout({ children }) {
       {/* Hero Banner */}
       <div className="relative w-full h-[32rem]">
         <Image
-          src="/assets/hero-banner.png" // Replace with your actual banner file
+          src="/assets/banner.png" // Replace with your actual banner file
           alt="Hero banner"
           layout="fill"
           objectFit="cover"
