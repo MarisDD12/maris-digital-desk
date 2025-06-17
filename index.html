@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mari's Digital Desk - Templates to Organize Your Digital Flow</title>
+    <meta name="description" content="Beautiful, minimal Notion templates for productivity, planning, and digital organization. Free and premium templates designed for modern workflows.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #ff8c42, #8b4513);
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path d="M0,100 Q250,150 500,100 T1000,100 L1000,300 L0,300 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(26, 26, 26, 0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            background: #ff6b35;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #ff6b35;
+            border: 2px solid #ff6b35;
+        }
+
+        .btn-outline:hover {
+            background: #ff6b35;
+            color: white;
+        }
+
+        /* Template Filters */
+        .filters-section {
+            padding: 4rem 0;
+            background: rgba(42, 42, 42, 0.3);
+        }
+
+        .filter-container {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid #ff6b35;
+            color: #ff6b35;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #ff6b35;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .search-container {
+            margin-top: 1rem;
+        }
+
+        .search-container input {
+            padding: 12px 20px;
+            border: 2px solid #444;
+            border-radius: 25px;
+            background: #2a2a2a;
+            color: white;
+            width: 300px;
+            max-width: 100%;
+            font-size: 1rem;
+        }
+
+        .search-container input:focus {
+            outline: none;
+            border-color: #ff6b35;
+        }
+
+        /* Template Grid */
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .template-card {
+            background: #2a2a2a;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .template-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(255,107,53,0.3);
+        }
+
+        .template-image {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .price-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+        }
+
+        .price-badge.free {
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+        }
+
+        .price-badge.premium {
+            background: rgba(255, 107, 53, 0.9);
+            color: white;
+        }
+
+        .template-content {
+            padding: 1.5rem;
+        }
+
+        .template-content h3 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .template-content p {
+            color: #cccccc;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .template-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 107, 53, 0.2);
+            color: #ff6b35;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        /* Support Section */
+        .support-section {
+            background: linear-gradient(135deg, #6f4e37, #8b4513);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .support-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .support-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 2rem;
+            color: #ffcc70;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat span {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .coffee-btn {
+            display: inline-block;
+            background: #ffcc70;
+            color: #6f4e37;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 204, 112, 0.3);
+        }
+
+        .coffee-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 112, 0.4);
+            background: #ffd700;
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 2rem auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background: #2a2a2a;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #2a2a2a;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #cccccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #888;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .support-stats {
+                gap: 1.5rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .newsletter-form input {
+                width: 100%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .template-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .template-card:nth-child(1) { animation-delay: 0.1s; }
+        .template-card:nth-child(2) { animation-delay: 0.2s; }
+        .template-card:nth-child(3) { animation-delay: 0.3s; }
+        .template-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <div class="logo">Mari's Digital Desk</div>
+            <ul class="nav-menu">
+                <li><a href="#templates">Templates</a></li>
+                <li><a href="#widgets">Widgets</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header/Hero Section -->
+    <header class="header">
+        <div class="hero">
+            <h1>Focus Flow - A Minimalist Pomodoro Studio</h1>
+            <p>"Stay centered. Stay productive."</p>
+            <div class="hero-buttons">
+                <a href="#templates" class="btn btn-primary">Browse Templates</a>
+                <a href="#coffee" class="btn btn-outline">☕ Buy Me a Coffee</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Template Filters & Grid -->
+    <section class="filters-section" id="templates">
+        <div class="container">
+            <div class="filter-container">
+                <h2 style="margin-bottom: 2rem; font-size: 2.5rem;">✨ Featured Templates</h2>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterTemplates('all')">All Templates</button>
+                    <button class="filter-btn" onclick="filterTemplates('productivity')">Productivity</button>
+                    <button class="filter-btn" onclick="filterTemplates('planning')">Planning</button>
+                    <button class="filter-btn" onclick="filterTemplates('study')">Study</button>
+                    <button class="filter-btn" onclick="filterTemplates('wellness')">Wellness</button>
+                </div>
+                
+                <div class="search-container">
+                    <input type="text" id="templateSearch" placeholder="🔍 Search templates..." onkeyup="searchTemplates()">
+                </div>
+            </div>
+
+            <div class="templates-grid" id="templatesGrid">
+                <!-- Focus Flow Template -->
+                <div class="template-card" data-category="productivity">
+                    <div class="template-image">
+                        🍅
+                        <div class="price-badge free">Free</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Focus Flow - Minimalist Pomodoro Studio</h3>
+                        <p>Complete Pomodoro productivity system with task management, daily goals, and progress tracking. Beautiful tomato-themed timer with sound notifications.</p>
+                        <div class="template-tags">
+                            <span class="tag">Productivity</span>
+                            <span class="tag">Time Management</span>
+                            <span class="tag">Pomodoro</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Get Template</a>
+                    </div>
+                </div>
+
+                <!-- Weekly Planner -->
+                <div class="template-card" data-category="planning">
+                    <div class="template-image">
+                        📅
+                        <div class="price-badge free">Free</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Weekly Digital Planner</h3>
+                        <p>Organize your week with style and clarity. Beautiful minimalist design with goal tracking and reflection prompts.</p>
+                        <div class="template-tags">
+                            <span class="tag">Planning</span>
+                            <span class="tag">Organization</span>
+                            <span class="tag">Goals</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Get Template</a>
+                    </div>
+                </div>
+
+                <!-- Today's Focus -->
+                <div class="template-card" data-category="productivity">
+                    <div class="template-image">
+                        ☀️
+                        <div class="price-badge free">Free</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Today's Focus Dashboard</h3>
+                        <p>Start each day with intention. Daily planning template with priority tasks, intentions, and gratitude practice.</p>
+                        <div class="template-tags">
+                            <span class="tag">Daily Planning</span>
+                            <span class="tag">Mindfulness</span>
+                            <span class="tag">Focus</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Get Template</a>
+                    </div>
+                </div>
+
+                <!-- Coming Soon - Premium Timer -->
+                <div class="template-card" data-category="productivity" style="opacity: 0.7;">
+                    <div class="template-image">
+                        ⏰
+                        <div class="price-badge premium">$7</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Premium Focus Timer Pro</h3>
+                        <p>Advanced Pomodoro timer with analytics, custom sounds, break reminders, and productivity insights. Coming Q2 2025.</p>
+                        <div class="template-tags">
+                            <span class="tag">Premium</span>
+                            <span class="tag">Analytics</span>
+                            <span class="tag">Advanced</span>
+                        </div>
+                        <div class="btn" style="background: #666; cursor: not-allowed;">Coming Soon</div>
+                    </div>
+                </div>
+
+                <!-- Study Planner -->
+                <div class="template-card" data-category="study">
+                    <div class="template-image">
+                        📚
+                        <div class="price-badge premium">$5</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Student Life Organizer</h3>
+                        <p>Complete student dashboard with class schedules, assignment tracking, grade monitoring, and study session planning.</p>
+                        <div class="template-tags">
+                            <span class="tag">Student</span>
+                            <span class="tag">Education</span>
+                            <span class="tag">Scheduling</span>
+                        </div>
+                        <a href="mailto:hello@marisdigitaldesk.com?subject=Student Life Organizer Purchase" class="btn btn-primary">Buy Template</a>
+                    </div>
+                </div>
+
+                <!-- Wellness Tracker -->
+                <div class="template-card" data-category="wellness">
+                    <div class="template-image">
+                        🌱
+                        <div class="price-badge premium">$5</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Wellness & Mindfulness Tracker</h3>
+                        <p>Track habits, mood, energy levels, and mindfulness practice. Beautiful visualizations and reflection prompts included.</p>
+                        <div class="template-tags">
+                            <span class="tag">Wellness</span>
+                            <span class="tag">Habits</span>
+                            <span class="tag">Mindfulness</span>
+                        </div>
+                        <a href="mailto:hello@marisdigitaldesk.com?subject=Wellness Tracker Purchase" class="btn btn-primary">Buy Template</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section" id="coffee">
+        <div class="container">
+            <div class="support-content">
+                <h2>☕ Love These Templates?</h2>
+                <p>Creating beautiful, functional templates takes time and coffee. If these templates have helped organize your digital life, consider buying me a coffee!</p>
+                
+                <div class="support-stats">
+                    <div class="stat">
+                        <strong>1000+</strong>
+                        <span>Downloads</span>
+                    </div>
+                    <div class="stat">
+                        <strong>50+</strong>
+                        <span>Happy Users</span>
+                    </div>
+                    <div class="stat">
+                        <strong>Free</strong>
+                        <span>Always</span>
+                    </div>
+                </div>
+                
+                <a href="https://buymeacoffee.com/marisdigitaldesk" class="coffee-btn" target="_blank">
+                    ☕ Buy Me a Coffee
+                </a>
+                
+                <p class="support-note">Every coffee helps me create more free templates for the community ❤️</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>🎯 Get Free Templates & Productivity Tips</h2>
+            <p>Join 1,000+ organized individuals who receive weekly digital organization inspiration</p>
+            
+            <form class="newsletter-form" action="#" method="post">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Get Free Templates</button>
+            </form>
+            
+            <p style="font-size: 0.9rem; opacity: 0.8;">✅ No spam, ever. Unsubscribe anytime with one click.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="container" id="about" style="padding: 4rem 0;">
+        <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">🏡 About Mari's Digital Desk</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #cccccc;">Hi, I'm Mari! I create modern, minimal templates to help people build calm into their digital lives. This desk is where I keep the tools I wish I had when I started my productivity journey.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: rgba(42, 42, 42, 0.5); padding: 2rem; border-radius: 15px;">
+                    <h3 style="color: #ff6b35; margin-bottom: 1rem;">My Mission</h3>
+                    <p>Making digital organization beautiful, accessible, and stress-free for everyone.</p>
+                </div>
+                <div style="background: rgba(42, 42, 42, 0.5); padding: 2rem; border-radius: 15px;">
+                    <h3 style="color: #ff6b35; margin-bottom: 1rem;">My Promise</h3>
+                    <p>Always offer free templates, respond within 24 hours, and keep designs minimal and functional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container" id="contact" style="padding: 4rem 0;">
+        <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">📧 Get in Touch</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
+            <div style="background: rgba(42, 42, 42, 0.5); padding: 2rem; border-radius: 15px; text-align: center;">
+                <h3 style="color: #ff6b35; margin-bottom: 1rem;">📧 Email Support</h3>
+                <p>hello@marisdigitaldesk.com</p>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Response within 24 hours</p>
+            </div>
+            <div style="background: rgba(42, 42, 42, 0.5); padding: 2rem; border-radius: 15px; text-align: center;">
+                <h3 style="color: #ff6b35; margin-bottom: 1rem;">💬 Quick Questions?</h3>
+                <p>Follow me for daily productivity tips and template updates</p>
+                <div style="margin-top: 1rem;">
+                    <a href="#" style="color: #ff6b35; margin: 0 0.5rem;">Twitter</a>
+                    <a href="#" style="color: #ff6b35; margin: 0 0.5rem;">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Templates</h3>
+                    <a href="#templates">All Templates</a>
+                    <a href="#templates">Free Templates</a>
+                    <a href="#templates">Premium Templates</a>
+                    <a href="#templates">Coming Soon</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="#contact">Contact</a>
+                    <a href="#coffee">Buy Me a Coffee</a>
+                    <a href="#newsletter">Newsletter</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Notion</a>
+                    <a href="mailto:hello@marisdigitaldesk.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mari's Digital Desk. Made with ❤️ for the productivity community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Template filtering
+        function filterTemplates(category) {
+            const cards = document.querySelectorAll('.template-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Template search
+        function searchTemplates() {
+            const searchTerm = document.getElementById('templateSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.template-card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Newsletter form submission (placeholder)
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert('Thank you for subscribing! Check your email for confirmation.');
+            this.reset();
+        });
+    </script>
+
+    <!-- Google Analytics placeholder -->
+    <!-- Replace with your GA4 tracking code -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+</body>
+</html>
